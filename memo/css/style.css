@@ -1,7 +1,8 @@
 /* ------- Body ------- */
 
 * {
-	font-family:  'Segoe UI', sans-serif, "Times New Roman"; 
+	font-family:  Helvetica, sans-serif; 
+	font-weight: normal;
 }
 
 body {
@@ -40,20 +41,26 @@ header h1 {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;	
+	align-items: center;
 }
 
 em {
-	font-size: 1.5em;
+	font-size: 1.2em;
 	font-style: normal;
 }
 
 #logo {
 	width: auto;
-	height: 80%;
+	height: 85%;
+	margin-top: 5px;
+}
+
+#logo:hover {
+	opacity: 80%;
 }
 
 #checked_profile {
-	height: 65%;
+	height: 56%;
 	padding-left: 40px;
 }
 
@@ -67,7 +74,7 @@ header nav {
 
 header nav ul {
 	font-size: 1.1em;
-	width: 80%;
+	width: 76%;
 	
 	display: flex;
 	flex-direction: row;
@@ -91,7 +98,7 @@ nav ul li {
 .plus {
 	background-color: #28a745;
 	border-radius: 5px;
-	width: 22px;
+	width: 18px;
 }
 
 .roue {
@@ -99,12 +106,20 @@ nav ul li {
 	padding-left: 15px;
 }
 
+.selected {
+	background-color: #ffc107;
+}
+
+.selected a {
+	color: #007bff;
+}
+
 /* ------- Main ------- */
 
 
 main {
 	/* background-color: rgb(176, 230, 179); */
-	width: 85%;
+	width: 90%;
 	margin: auto;
 
 	display: flex; 
@@ -130,7 +145,7 @@ main h2 {
 	
 }
 
- section {
+section {
 	display : flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -146,10 +161,28 @@ section h3 a {
 }
 
 h3 {
-	font-size: 2.0em;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	font-size: 1.8em;
+	text-align: left;
+}
+
+h3 .plus {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-basis: 15%;
+	height: 38px;	
+	text-align: center;
+	font-size: 0.6em;
 }
 
 article{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	margin-top: 30px;
 	border-radius: 5px;
 	background-color:  #6c757d;
@@ -158,17 +191,40 @@ article{
 	padding: 15px 15px;
 } 
 
+h4 {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	justify-items: flex-start;
+	padding-bottom: 20px;
+}
+
+h4 p {
+	padding: 0 24px;
+}
+
+.arrow {
+	height: 30px;
+	margin: 0 -8px;
+}
+
+article p {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
 button {
 	background-color: #ffc107;
 	border-style: none;
 	border-radius: 3px;
 	padding: 10px;
-	margin-top: 10px;
+	margin-top: 0px;
 	font-size: 0.6em;
 }
 
-button .roue {
-	height: 30px;
+p .roue {
+	height: 35px;
 }
 
 
