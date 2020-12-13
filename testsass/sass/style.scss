@@ -1,0 +1,49 @@
+
+/* Test de variable */
+$bleu : #579BF4;
+$color_fifou : yellowgreen;
+$taille : 3.0em;
+
+/* Test d'imbrication */ 
+body {
+    background-color: $bleu;
+    p {
+        border:  2px solid $color_fifou;
+        margin: 20px;
+        font-size: $taille;
+    }
+}
+
+/* Test d'héritage */
+%button {
+    border: 1px solid $color_fifou;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    &:hover {
+        cursor: pointer;
+        background-color: palegreen;
+        color: wheat;
+    }
+}
+
+// button {
+//     @extend %button;
+// }
+
+/* Test Mixin */
+@mixin bouton($bgcolor) {
+    border: 1px solid $color_fifou;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    &:hover {
+        cursor: pointer;
+        background-color: $bgcolor;
+        color: wheat;
+    }
+}
+
+button {
+    @include bouton($color_fifou)
+}

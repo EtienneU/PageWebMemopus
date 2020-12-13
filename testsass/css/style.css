@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/* Test de variable */
+/* Test d'imbrication */
+body {
+  background-color: #579BF4; }
+  body p {
+    border: 2px solid yellowgreen;
+    margin: 20px;
+    font-size: 3em; }
+
+/* Test d'héritage */
+/* Test Mixin */
+button {
+  border: 1px solid yellowgreen;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px; }
+  button:hover {
+    cursor: pointer;
+    background-color: yellowgreen;
+    color: wheat; }
+
+/*# sourceMappingURL=style.css.map */
