@@ -5,55 +5,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <title>Domaine d'O - compiled bootstrap SASS</title>
 </head>
 
 <body>
-    <header class="container flex-column justify-content-center">
-        <h1 class="d-flex flex-row justify-content-between ">
-            <p id="icons" class="h4">
-                icônes réseaux
-            </p>
-            <p>
-                Domaine d'<em>O</em>
-            </p>
-            <p id="notifs">
-                <button class="btn border border-warning rounded-0">Notifications</button>
-                <button class="btn border border-warning rounded-0">Abonnement</button>
-            </p>
-        </h1>
+    <header class="container">
+        <div class="row mb-3 mt-3">
+            <div class="col icones">
+                <i class="fab fa-facebook-f fa-xs mr-2"><span class="sr-only">Facebook</span></i>
+                <i class="fab fa-twitter fa-xs mr-2"><span class="sr-only">Twitter</span></i>
+                <i class="fab fa-youtube fa-xs mr-2"><span class="sr-only">Youtube</span></i>
+                <i class="fab fa-tripadvisor fa-xs mr-2"><span class="sr-only">Tripadvisor</span></i>
+            </div>
+            <h1 class="col">
+                <a href=".">
+                    <img src="./img/logo-domaine-d-o.png"
+                        alt="logo Domaine d'O - Montpellier Métropole- retour accueil" />
+                </a>
+            </h1>
+            <div id="notifs" class="col">
+                <ul class="row list-unstyled">
+                    <li>
+                        <button class="btn btn-header rounded-0 mr-2">Notifications</button>
+                    </li>
+                    <li>
+                        <button class="btn btn-header rounded-0">Abonnement</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
         <nav class="d-flex flex-row justify-content-between">
-            <p class="col">
-                Menu
+            <p class="d-flex flex-col" id="menu">
+                <i class="fas fa-bars"><span class="sr-only">Menu</span></i>
+                <span class="text-uppercase">Menu</span>
             </p>
-            <ul class="d-flex flex-fill justify-content-between list-unstyled font-weight-bold">
+            <ul class="d-flex flex-fill justify-content-between list-unstyled font-weight-bold navbar">
                 <li class="col">SPECTACLES</li>
                 <li class="col">ZOOM-SUR</li>
                 <li class="col">AVEC LE PUBLIC</li>
                 <li class="col">PRATIQUE</li>
             </ul>
             <p class="col">
-                loupe
+                <i class="fas fa-search"><span class="sr-only">recherche</span></i>
             </p>
         </nav>
     </header>
 
     <main>
-        <section class="bg-warning d-flex flex-column align-items-start text-light" id="banniere">
+        <!-- Section bannière rouge -->
+        <section class="bg-warning d-flex flex-column align-items-start text-light">
             <h2 class="h5 font-weight-bold ml-5 pt-5">Info Flash</h2>
             <h3 class="d-flex flex-row justify-content-start mt-2 pb-3">
                 <p id="p1" class="text-uppercase font-weight-bold ml-5 pl-4">
                     COVID 19 - Information sur les spectacles (Mise à jour 04/12)
                 </p>
                 <p id="p2" class="font-weight-bold pr-5">
-                    Suite aux dernières mesures gouvernementales, pour lutter contre l'épidémie de COVID-19, 
+                    Suite aux dernières mesures gouvernementales, pour lutter contre l'épidémie de COVID-19,
                     les bureaux du domaine d'O restent fermés.
                 </p>
-                <button class="ml-5 mr-5 text-uppercase font-weight-bold text-warning">Plus d'infos</button>
+                <button class="btn btn-banniere rounded-0 text-uppercase">Plus d'infos</button>
             </h3>
         </section>
 
+        <!-- Section aux 2 images (#section2) -->
         <section id="section2" class="container mt-2">
             <section class="row">
                 <p class="col-md-6">
@@ -61,32 +78,108 @@
                 </p>
                 <p class="col-md-4 col text-uppercase text-warning font-weight-bold">
                     <img id="img2" src="./img/zoomsur.png" alt="photo feu d'articice" />
-                    Reprise en janvier ? <br/> 
+                    Reprise en janvier ? <br />
                     Réservez ou offrez des places de spectacle !
                 </p>
-            </section> 
+            </section>
         </section>
 
-        <section class="bg-success d-flex flex-column align-items-start" id="banniere_grise">
-            <h4 class="h6">Accès par festival</h4>
-            <p class="d-flex flex-row">
-                <button class="text-uppercase bg-dark text-light">
-                    Festival folies d'o 2020
-                </button>
-                <button class="text-uppercase bg-dark text-light">
-                    Saison 20/21
-                </button>
-                <button class="text-uppercase font-weight-bold bg-light">
-                    Le calendrier
-                </button>
-            </p>
+        <!-- Section bannière grise -->
+        <section class="bg-success d-flex flex-column align-items-start">
+            <div class="container pt-4 pb-4">
+                <h4 class="h6 pb-2">Accès par festival</h4>
+                <div id="3_boutons" class="d-flex flex-row">
+                    <button class="btn-festival text-uppercase">
+                        Festival folies d'o 2020
+                    </button>
+                    <button class="btn-saison text-uppercase">
+                        Saison 20/21
+                    </button>
+                    <button class="btn-calender text-uppercase font-weight-bold">
+                        <i class="fas fa-calendar-alt"><span class="sr-only">Calendrier</span></i>
+                        Le calendrier
+                    </button>
+                </div>
+            </div>
         </section>
 
+        <!-- Section mur d'images (mur_img) -->
+        <section class="container mt-4 mb-3">
+            <h4>Spectacles à venir</h4>
+        </section>
+        <section class="d-flex flex-row mt-3">
+            <div class="row d-flex justify-content-center">
+                <div class="card col-3">
+                    <!--p-0 m-3-->
+                    <img src="./img/k-bazar.jpg" class="card-img" alt="photo spectacle K bazar">
+                    <div class="card-img-overlay d-flex flex-column justify-content-between">
+                        <button class="btn-card text-uppercase font-weight-bold">Saison 20/21</button>
+                        <div class="texte_associe">
+                            <p class="card-text text-white font-weight-bold m-0">
+                                17/12/2020 > 18/12/2020
+                            </p>
+                            <p class="card-text text-white font-weight-bold m-0">
+                                K BAZAR 30
+                            </p>
+                            <p class="card-text text-warning">
+                                ANNULE pour cause de cris sanitaire REPORT A L'ETUDE plus d'informations à venir.
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <button class="border-warning text-warning bg-white p-1 pl-3 pr-3">DETAILS</button>
+                                <button class="border-0 text-white bg-warning p-2">RESERVER</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-3">
+                    <!--p-0 m-3-->
+                    <img src="./img/folies_do2020.jpg" class="card-img" alt="photo spectacle K bazar">
+                    <div class="card-img-overlay d-flex flex-column justify-content-between">
+                        <button class="btn-card text-uppercase font-weight-bold">Festival folies d'o 2020</button>
+                        <div class="texte_associe">
+                            <p class="card-text text-white font-weight-bold m-0">
+                                Vendredi 18 décembre 20h00
+                            </p>
+                            <p class="card-text text-white font-weight-bold text-uppercase m-0">
+                                Les Folies éclatées
+                                Michel Legrand
+                            </p>
+                            <p class="card-text text-light">
+                                Du 17 octobre au 23 décembre à l'Opéra Berlioz - Le Corum et
+                                au domaine d'O au théâtre Jean-Claude Carrière.
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <button class="border-warning text-warning bg-white p-1 pl-3 pr-3">DETAILS</button>
+                                <button class="border-0 text-white bg-warning p-2">RESERVER</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-3">
+                    <!--p-0 m-3-->
+                    <img src="./img/a_nos_ailleurs.jpg" class="card-img" alt="photo spectacle K bazar">
+                    <div class="card-img-overlay d-flex flex-column justify-content-between">
+                        <button class="btn-card text-uppercase font-weight-bold">Saison 20/21</button>
+                        <div class="texte_associe">
+                            <p class="card-text text-white font-weight-bold m-0">13/01/2021 > 15/01/2021
+                            </p>
+                            <p class="card-text text-white font-weight-bold text-uppercase m-0">A nos ailleurs</p>
+                            <p class="card-text text-secondary">Co-production domaine d'O</p>
+                            <div class="d-flex justify-content-between">
+                                <button class="border-warning text-warning bg-white p-1 pl-3 pr-3">DETAILS</button>
+                                <button class="border-0 text-white bg-warning p-2">RESERVER</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <p>Me voici dans le footer - Montpellier Méditérannée Métropole</p>
     </footer>
-    
+
 </body>
+
 </html>
