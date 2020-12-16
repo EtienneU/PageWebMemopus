@@ -7889,5 +7889,8 @@ body main section button {
     color: #000000;
     background-color: white;
     border: 1px solid black; }
+body main section .card {
+  border: none;
+  margin-bottom: 35px; }
 
 /*# sourceMappingURL=style.css.map */
