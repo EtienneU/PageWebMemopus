@@ -7892,5 +7892,29 @@ body main section button {
 body main section .card {
   border: none;
   margin-bottom: 35px; }
+body main .btn-spectacles {
+  font-size: 1.0em;
+  font-weight: 700;
+  background-color: white;
+  color: #f74e2d;
+  border: 2px solid #f74e2d;
+  border-radius: 0;
+  margin: 5px auto;
+  display: block; }
+body main .btn-spectacles:hover {
+  background-color: #f74e2d;
+  color: white; }
+body footer hr {
+  width: 88%;
+  border-top: 1px solid black;
+  margin: 30px auto; }
+body footer li {
+  margin-bottom: 13px; }
+body footer section {
+  font-size: 0.9em;
+  line-height: 0.95em; }
+body footer #logo_3m {
+  width: 200%;
+  height: auto; }
 
 /*# sourceMappingURL=style.css.map */

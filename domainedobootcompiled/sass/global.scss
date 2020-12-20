@@ -52,7 +52,7 @@ body {
                 display: none;
             }
         }
-    }
+    }//end header
 
     main {
         button {
@@ -106,7 +106,7 @@ body {
                     background-color: map-get($theme-colors, "dark");
                 }
                 &.btn-festival:hover, &.btn-saison:hover {
-                    color: map-get($map: $theme-colors, $key:"dark" );
+                    color: map-get($theme-colors, "dark" );
                     background-color: white;
                     border: 1px solid black;
                 }
@@ -131,7 +131,7 @@ body {
                     font-size: 0.6em;
                 }
                 &.btn-card:hover {
-                    color: map-get($map: $theme-colors, $key:"dark" );
+                    color: map-get($theme-colors, "dark" );
                     background-color: white;
                     border: 1px solid black;
                 }
@@ -140,6 +140,39 @@ body {
                 border: none;
                 margin-bottom: 35px;
             }
+        } //end section
+        .btn-spectacles {
+            font-size: 1.0em;
+            font-weight: 700;
+            background-color: white;
+            color: map-get($theme-colors, "warning" );
+            border: 2px solid map-get($theme-colors, "warning");
+            border-radius: 0;
+            margin: 5px auto;
+            display: block;
         }
-    } 
-}
+        .btn-spectacles:hover {
+            background-color: map-get($theme-colors, "warning" );
+            color: white;
+        }
+    } //end main
+
+    footer {
+        hr {
+            width: 88%;
+            border-top: 1px solid black;
+            margin: 30px auto;
+        }
+        li {
+           margin-bottom: 13px;
+        }
+        section {
+            font-size: 0.9em;
+            line-height: 0.95em;
+        }
+        #logo_3m {
+            width: 200%;
+            height: auto;
+        }
+    }
+} //end body
