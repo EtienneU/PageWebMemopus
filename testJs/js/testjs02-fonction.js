@@ -25,7 +25,7 @@ function Voiture(peinture, modele, nbr_roues) {
     }
 }
 
-Voiture.prototype.nbr_roues = 4;
+Voiture.prototype.nbr_roues = 4; //protocole à l'extérieur de la fonction constructeur
 
 const v = new Voiture("bleue", "Mercedes", 10);
 console.log(v.affiche());
