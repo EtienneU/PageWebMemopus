@@ -30,7 +30,7 @@ export default class Column extends CoopDom {
 
     render = () => {
         // Création  des éléments du DOM grâce à la méthode createAddDomElt héritée de CoopDom
-        const section = this.createAddDomElt("section", "", document.getElementById("main"),{"class":"column col-3"});
+        const section = this.createAddDomElt("section", "", document.getElementById("main"),{"class":"column col-3", });
         const title = this.createAddDomElt("h2", this.title, section, {"style": "margin: 20px 0"});
         const button = this.createAddDomElt("button", "Ajouter une carte", section, {"class":"btn btn-success"});
         const section_cards = this.createAddDomElt("section", "", section ,{"class":"cards"});

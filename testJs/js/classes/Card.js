@@ -57,8 +57,8 @@ export default class Card extends CoopDom {
         );
         // Ici, il faut maintenant créer les élément du dom qui constituent une carte
         // soit pour commencer l'affichage de la question en h3
-        // l'affichage de la réponse en paragraphe. Ces deux derniers éléments 
-        // sont les fils direct de l'élément du dom "article"
+        // l'affichage de la réponse en paragraphe. 
+        // Ces deux derniers éléments sont les fils direct de l'élément du dom "article"
         const question = this.createAddDomElt(
             "h3",
             this.question,
