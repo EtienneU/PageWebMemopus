@@ -137,6 +137,5 @@ export default class Card extends CoopDom {
             "input_question": input_question,
             "button_edit": button_edit,
         };
-
     }
 }
