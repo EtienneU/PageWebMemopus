@@ -9,8 +9,6 @@ export default class Card extends CoopDom {
         this.added = added; // carte ajoutée (added = true) ou carte existance (added = false)
         
         // construction du dom de la carte
-        // if (!added) this.domElements = this.render();
-        // else this.domElements = this.render_added();
         this.domElements = this.render();
 
         // gestion des événements
@@ -52,13 +50,13 @@ export default class Card extends CoopDom {
         }
 
         this.domElements.button_submit_edit.onclick = (e) => {
-            console.log("Je clique sur le fucking bouton");
+            console.log("Je clique sur le bouton Valider");
             e.preventDefault();
             const new_question = this.domElements.input_question.value;
             const new_answer = this.domElements.input_answer.value;
 
-            this.domElements.question.value = new_question;
-            this.domElements.answer.value = new_answer;
+            this.domElements.question.textContent = new_question;
+            this.domElements.answer.textContent = new_answer;
 
             this.domElements.form_edit.hidden = true;
             this.domElements.question.hidden = false;
@@ -133,7 +131,7 @@ export default class Card extends CoopDom {
             "input",
             "",
             form_edit,
-            {"type": "text", "value": this.question, "class": "form-control"}
+            {"type": "text", "value": this.question, "class": "form-control", "style": "margin: 4px 0"}
         );
         const label_answer = this.createAddDomElt(
             "label",
