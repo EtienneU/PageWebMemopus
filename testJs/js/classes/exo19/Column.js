@@ -22,8 +22,8 @@ export default class Column extends CoopDom {
         
     }
     addCard = () => {
-        console.log("dans addCard");
-        new Card("Question", "Réponse", this); // this représente l'instance de la colonne
+        console.log("dans addCard de Column.js");
+        new Card("Question", "Réponse", this, true); // this représente l'instance de la colonne
     }
     removeCard = (card) => {
         console.log("Dans removeCard");

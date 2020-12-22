@@ -1,13 +1,16 @@
 import CoopDom from "../CoopDom.js";
 export default class Card extends CoopDom {
 
-    constructor(question, answer, column) {
+    constructor(question, answer, column, added = false) {
         super();
         this.question = question;
         this.answer = answer;
         this.column = column;
+        this.added = added; // carte ajoutée (added = true) ou carte existance (added = false)
         
         // construction du dom de la carte
+        // if (!added) this.domElements = this.render();
+        // else this.domElements = this.render_added();
         this.domElements = this.render();
 
         // gestion des événements
@@ -48,6 +51,20 @@ export default class Card extends CoopDom {
             this.domElements.form_edit.hidden = true;
         }
 
+        this.domElements.button_submit_edit.onclick = (e) => {
+            console.log("Je clique sur le fucking bouton");
+            e.preventDefault();
+            const new_question = this.domElements.input_question.value;
+            const new_answer = this.domElements.input_answer.value;
+
+            this.domElements.question.value = new_question;
+            this.domElements.answer.value = new_answer;
+
+            this.domElements.form_edit.hidden = true;
+            this.domElements.question.hidden = false;
+            this.domElements.answer.hidden = true;
+        }
+
         // Afficher/cacher la réponse lors du click sur la question
         this.domElements.question.onclick = (e) => {
             console.log("Je viens de cliquer sur une question");
@@ -57,7 +74,7 @@ export default class Card extends CoopDom {
                 this.domElements.answer.hidden = true;
             }
             /* j'ai essayé de passer par la création d'une variable locale qui stocke 
-            la propriété hidden de answer mais ça n'a pas aboutit.
+            la propriété hidden de answer mais ça n'a pas aboutit :
 
             let answer_visib = this.domElements.answer.hidden;
             if (answer_visib = true) {
@@ -72,6 +89,7 @@ export default class Card extends CoopDom {
 
     render = () => {
         console.log("Dans la fonction render de Card");
+
         // Création  des éléments du DOM grâce à la méthode createAddDomElt héritée de CoopDom
         const article = this.createAddDomElt(
             "article",
@@ -83,6 +101,8 @@ export default class Card extends CoopDom {
         // soit pour commencer l'affichage de la question en h3
         // l'affichage de la réponse en paragraphe. Ces deux derniers éléments 
         // sont les fils direct de l'élément du dom "article"
+
+        
         const question = this.createAddDomElt(
             "h4",
             this.question,
@@ -93,6 +113,9 @@ export default class Card extends CoopDom {
             this.answer,
             article
         );
+        // je cache la réponse par défaut
+        answer.hidden = true;
+
         
         // création du formulaire
         const form_edit = this.createAddDomElt(
@@ -150,6 +173,19 @@ export default class Card extends CoopDom {
             article,
             {"class": "btn btn-warning mr-2 w-100"}
         );
+
+        // Affichage spécifique pour une carte nouvellement ajoutée
+        if (this.added) {
+            console.log("CARTE AJOUTEE");
+            question.hidden = true;
+            answer.hidden = true;
+            form_edit.hidden = false;
+            label_answer.hidden = true;
+            label_question.hidden = true;
+            button_submit_edit.value = "Valider";
+            button_submit_edit.hidden = false;
+        }
+
         
         return {
             "article": article,
@@ -160,6 +196,7 @@ export default class Card extends CoopDom {
             "input_answer": input_answer,
             "input_question": input_question,
             "button_edit": button_edit,
+            "button_submit_edit": button_submit_edit
         };
     }
 }
