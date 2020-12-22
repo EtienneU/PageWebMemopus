@@ -1,5 +1,6 @@
-import CoopDom from "./CoopDom.js";
+import CoopDom from "../CoopDom.js";
 export default class Card extends CoopDom {
+
     constructor(question, answer, column) {
         super();
         this.question = question;
@@ -13,6 +14,7 @@ export default class Card extends CoopDom {
         this.handleEvents();
 
     }
+
     handleEvents = () => {
         // suppression d'une carte
         this.domElements.button_remove.onclick = () => {
@@ -45,7 +47,29 @@ export default class Card extends CoopDom {
             // on cache le formulaire
             this.domElements.form_edit.hidden = true;
         }
+
+        // Afficher/cacher la réponse lors du click sur la question
+        this.domElements.question.onclick = (e) => {
+            console.log("Je viens de cliquer sur une question");
+            if (this.domElements.answer.hidden) {
+                this.domElements.answer.hidden = false;
+            } else {
+                this.domElements.answer.hidden = true;
+            }
+            /* j'ai essayé de passer par la création d'une variable locale qui stocke 
+            la propriété hidden de answer mais ça n'a pas aboutit.
+
+            let answer_visib = this.domElements.answer.hidden;
+            if (answer_visib = true) {
+                answer_visib = false;
+            } else {
+                answer_visib = true;
+            }
+
+            */
+        }
     }
+
     render = () => {
         console.log("Dans la fonction render de Card");
         // Création  des éléments du DOM grâce à la méthode createAddDomElt héritée de CoopDom
@@ -57,10 +81,10 @@ export default class Card extends CoopDom {
         );
         // Ici, il faut maintenant créer les élément du dom qui constituent une carte
         // soit pour commencer l'affichage de la question en h3
-        // l'affichage de la réponse en paragraphe. 
-        // Ces deux derniers éléments sont les fils direct de l'élément du dom "article"
+        // l'affichage de la réponse en paragraphe. Ces deux derniers éléments 
+        // sont les fils direct de l'élément du dom "article"
         const question = this.createAddDomElt(
-            "h3",
+            "h4",
             this.question,
             article
         );
