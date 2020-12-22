@@ -57,6 +57,7 @@ export default class Card extends CoopDom {
 
             this.domElements.question.textContent = this.domElements.input_question.value;
             this.domElements.answer.textContent = this.domElements.input_answer.value;
+            this.domElements.button_submit_edit.value = "Modifier"; 
 
             this.domElements.form_edit.hidden = true;
             this.domElements.question.hidden = false;
