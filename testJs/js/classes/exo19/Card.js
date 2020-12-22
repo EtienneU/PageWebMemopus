@@ -49,14 +49,14 @@ export default class Card extends CoopDom {
             this.domElements.form_edit.hidden = true;
         }
 
+        // Au clique de mon bouton "Valider", j'affecte de nouvelles valeurs à Question et Answer
+        // et je choisis l'afficher standard : Question, bouton Supprimer et bouton Modifier
         this.domElements.button_submit_edit.onclick = (e) => {
             console.log("Je clique sur le bouton Valider");
             e.preventDefault();
-            const new_question = this.domElements.input_question.value;
-            const new_answer = this.domElements.input_answer.value;
 
-            this.domElements.question.textContent = new_question;
-            this.domElements.answer.textContent = new_answer;
+            this.domElements.question.textContent = this.domElements.input_question.value;
+            this.domElements.answer.textContent = this.domElements.input_answer.value;
 
             this.domElements.form_edit.hidden = true;
             this.domElements.question.hidden = false;
@@ -100,7 +100,6 @@ export default class Card extends CoopDom {
         // soit pour commencer l'affichage de la question en h3
         // l'affichage de la réponse en paragraphe. Ces deux derniers éléments 
         // sont les fils direct de l'élément du dom "article"
-
         
         const question = this.createAddDomElt(
             "h4",
@@ -131,7 +130,7 @@ export default class Card extends CoopDom {
             "input",
             "",
             form_edit,
-            {"type": "text", "value": this.question, "class": "form-control", "style": "margin: 4px 0"}
+            {"type": "text", "value": this.question, "class": "form-control", "style": "margin: 6px 0"}
         );
         const label_answer = this.createAddDomElt(
             "label",
@@ -142,7 +141,7 @@ export default class Card extends CoopDom {
             "input",
             "",
             form_edit,
-            {"type": "text", "value": this.answer, "class": "form-control"}
+            {"type": "text", "value": this.answer, "class": "form-control", "style":"margin: 6px 0"}
         );
         const button_submit_edit = this.createAddDomElt(
             "input",
@@ -174,7 +173,7 @@ export default class Card extends CoopDom {
         );
 
         // Affichage spécifique pour une carte nouvellement ajoutée
-        // Je m'assure que seuls le formulaire et le bouton Valider s'affichent
+        // Je m'assure que seuls le formulaire,le bouton Valider et le bouton Supprimer s'affichent
         if (this.added) {
             console.log("CARTE AJOUTEE");
             question.hidden = true;
@@ -182,7 +181,7 @@ export default class Card extends CoopDom {
             form_edit.hidden = false;
             label_answer.hidden = true;
             label_question.hidden = true;
-            button_submit_edit.value = "Valider";
+            button_submit_edit.value = "Valider"; // changement de la valeur du button_submit_edit
             button_submit_edit.hidden = false;
             button_edit.hidden = true;
         }
@@ -197,7 +196,7 @@ export default class Card extends CoopDom {
             "input_answer": input_answer,
             "input_question": input_question,
             "button_edit": button_edit,
-            "button_submit_edit": button_submit_edit
+            "button_submit_edit": button_submit_edit // Ne pas oublier de retourner également ce bouton
         };
     }
 }

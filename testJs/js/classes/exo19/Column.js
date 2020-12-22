@@ -23,6 +23,8 @@ export default class Column extends CoopDom {
     }
     addCard = () => {
         console.log("dans addCard de Column.js");
+        // J'ajoute ici un 4eme argument à l'appel du constructeur de Card
+        // pour spécifier qu'il s'agit d'une carte ajoutée (added) --> son affichage s'effectue autrement
         new Card("Question", "Réponse", this, true); // this représente l'instance de la colonne
     }
     removeCard = (card) => {
