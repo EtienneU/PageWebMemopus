@@ -63,6 +63,7 @@ export default class Card extends CoopDom {
             this.domElements.form_edit.hidden = true;
             this.domElements.question.hidden = false;
             this.domElements.answer.hidden = true;
+            this.domElements.button_edit.hidden = false;
         }
 
         // Afficher/cacher la réponse lors du click sur la question
@@ -175,6 +176,7 @@ export default class Card extends CoopDom {
         );
 
         // Affichage spécifique pour une carte nouvellement ajoutée
+        // Je m'assure que seuls le formulaire et le bouton Valider s'affichent
         if (this.added) {
             console.log("CARTE AJOUTEE");
             question.hidden = true;
@@ -184,6 +186,7 @@ export default class Card extends CoopDom {
             label_question.hidden = true;
             button_submit_edit.value = "Valider";
             button_submit_edit.hidden = false;
+            button_edit.hidden = true;
         }
 
         
